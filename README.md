@@ -1,0 +1,2 @@
+# lab04p2
+LAB 04 AJUDA NOIS AI SENHÔ
