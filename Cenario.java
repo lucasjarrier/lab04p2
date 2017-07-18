@@ -52,11 +52,54 @@ public class Cenario {
 	 * @throws Exception 
 	 */
 	
-	public void cadastraAposta(String nome,double valor,String previsao) throws Exception {
+	public void cadastraAposta(String nome,int valor,String previsao) throws Exception {
 		Apostas apostas = new Apostas(nome,valor,previsao);
 		totalApostas.add(apostas);
 	}
 	
+	/**
+	 * Metodo apostasDoCenario.
+	 * 
+	 * @return Responsavel por exibir as apostas de um cenário.
+	 */
+	
+	public String apostasDoCenario() {
+		String retorno = "";
+		for (int i = 0; i < totalApostas.size(); i++) {
+			retorno += totalApostas.get(i).toString() + LN;
+		}
+		return retorno;
+	}
+	
+	/**
+	 * 
+	 * @param nVaiAcontecer Recebe uma previsão.
+	 * @return Retorna o valor do caixa.
+	 */
+	
+	public double getCaixa(Previsao previsao) {
+		int caixa = 0;
+		for (Apostas aposta : this.totalApostas) {
+			if (aposta.getPrevisao().equals(previsao)) {
+				caixa += aposta.getValor();
+			}
+		}
+		return caixa;
+	}
+	
+	/**
+	 * Metodo totalApostas.
+	 * 
+	 * @return Responsavel por somar e mostrar todas as apostas de um cenário.
+	 */
+
+	public int totalApostas() {
+		int retorno = 0;
+		for (int i = 0; i < totalApostas.size(); i++) {
+			retorno += totalApostas.get(i).getValor();
+		}
+		return retorno;
+	}
 	
 	public int getNumeracao() {
 		return numeracao;
@@ -80,45 +123,6 @@ public class Cenario {
 
 	public void setEstado(EstadoAposta estado) {
 		this.estado = estado;
-	}
-
-	public double getCaixa(Previsao previsao) {
-		int caixa = 0;
-		for (Apostas aposta : this.totalApostas) {
-			if (aposta.getPrevisao().equals(previsao)) {
-				caixa += aposta.getValor();
-			}
-		}
-		return caixa;
-	}
-
-	/**
-	 * Metodo apostasDoCenario.
-	 * 
-	 * @return Responsavel por exibir as apostas de um cenário.
-	 */
-
-	public String apostasDoCenario() {
-		String retorno = "";
-		for (int i = 0; i < totalApostas.size(); i++) {
-			retorno += totalApostas.get(i).toString() + LN;
-		}
-		return retorno;
-	}
-	
-
-	/**
-	 * Metodo totalApostas.
-	 * 
-	 * @return Responsavel por somar e mostrar todas as apostas de um cenário.
-	 */
-
-	public int totalApostas() {
-		int retorno = 0;
-		for (int i = 0; i < totalApostas.size(); i++) {
-			retorno += totalApostas.get(i).getValor();
-		}
-		return retorno;
 	}
 
 	/**

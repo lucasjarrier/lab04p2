@@ -32,7 +32,7 @@ public class Facade {
 		controller.cadastrarCenarioBonus(descricao,bonus);
 	}
 
-	public void cadastrarAposta(int cenario, String nome, double valor, String previsao) throws Exception {
+	public void cadastrarAposta(int cenario, String nome, int valor, String previsao) throws Exception {
 		controller.cadastraAposta(cenario,nome, valor, previsao);
 	}
 

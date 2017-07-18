@@ -15,7 +15,7 @@ public class Apostas {
 	 */
 
 	private String nome;
-	private double valor;
+	private int valor;
 	private Previsao previsao;
 
 	/**
@@ -30,7 +30,7 @@ public class Apostas {
 	 *             Lan√ßa os erros de entrada ao usu√°rio.
 	 */
 
-	public Apostas(String nome, double valor, String previsao) throws Exception {
+	public Apostas(String nome, int valor, String previsao) throws Exception {
 		
 		/**
 		 * LanÁando as mensagens de Erro ao usu·rio.
@@ -94,7 +94,7 @@ public class Apostas {
 		return valor;
 	}
 
-	public void setValor(double valor) {
+	public void setValor(int valor) {
 		this.valor = valor;
 	}
 

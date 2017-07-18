@@ -95,7 +95,7 @@ public class Controller {
 	 *            Recebe a Previsão dita pelo apostador
 	 */
 
-	public void cadastraAposta(int cenario, String nome, double valor, String previsao) throws Exception {
+	public void cadastraAposta(int cenario, String nome, int valor, String previsao) throws Exception {
 
 		if (cenario <= 0) {
 			throw new Exception("Erro no cadastro de aposta: Cenario invalido");
@@ -138,7 +138,7 @@ public class Controller {
 	public String exibeTodosCenarios() {
 		String retorno = "";
 		for (int i = 0; i < listaCenario.size(); i++) {
-			retorno += listaCenario.get(i) + LN;
+			retorno += listaCenario.get(i).toString() + LN;
 		}
 		return retorno;
 	}
